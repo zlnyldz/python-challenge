@@ -1,13 +1,10 @@
-
-# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*- 
 """PyPoll Homework Starter File."""
 
 # Import necessary modules
 import csv
 import os
-# Set the working directory to ensure it's correct
-os.chdir("C:/Users/zilan/DataClass/homework/python-challenge/Starter_Code/PyPoll")
-print("Changed working directory:", os.getcwd())
+
 # Files to load and output (update with correct file paths)
 file_to_load = os.path.join("Resources", "election_data.csv")  # Input file path
 file_to_output = os.path.join("analysis", "election_analysis.txt")  # Output file path
@@ -15,7 +12,7 @@ file_to_output = os.path.join("analysis", "election_analysis.txt")  # Output fil
 # Initialize variables to track the election data
 total_votes = 0  # Track the total number of votes cast
 
-# Define lists and dictionaries to track candidate names and vote counts
+# Define dictionary to track candidate names and vote counts
 candidate_votes = {}
 
 # Open the CSV file and process it
@@ -27,16 +24,13 @@ with open(file_to_load) as election_data:
 
     # Loop through each row of the dataset and process it
     for row in reader:
-        # Print a loading indicator (for large datasets)
-        print(". ", end="")
-
         # Increment the total vote count for each row
         total_votes += 1
 
         # Get the candidate's name from the row
         candidate_name = row[2]
 
-        # If the candidate is not already in the candidate list, add them
+        # If the candidate is not already in the dictionary, add them
         if candidate_name not in candidate_votes:
             candidate_votes[candidate_name] = 0
 
